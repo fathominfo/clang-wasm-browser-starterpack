@@ -104,7 +104,7 @@ Install the dependencies listed below.
 ```sh
 # Clone this repository
 git clone https://github.com/michaelfranzl/clang-wasm-browser-starterpack.git
-cd lang-wasm-browser-starterpack
+cd clang-wasm-browser-starterpack
 
 # Build a specific commit of wasi-sdk
 git clone --recurse-submodules https://github.com/WebAssembly/wasi-sdk.git # about 1.5 GB
