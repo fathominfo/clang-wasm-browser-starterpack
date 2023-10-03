@@ -99,19 +99,18 @@ Then visit [http://localhost:8000](http://localhost:8000).
 
 ## Building
 
-Install the dependencies listed below.
+After installing the dependencies listed in the next section, check out the repo and build:
 
 ```sh
 # Clone this repository
-git clone https://github.com/michaelfranzl/clang-wasm-browser-starterpack.git
+git clone https://github.com/fathominfo/clang-wasm-browser-starterpack.git
 cd clang-wasm-browser-starterpack
 
-# Build a specific commit of wasi-sdk
 git clone --recurse-submodules https://github.com/WebAssembly/wasi-sdk.git # about 1.5 GB
 cd wasi-sdk
-git checkout a927856376271224d30c5d7732c00a0b359eaa45 # use llvm 12.0.0 release
 make
-make install # installs to /opt/wasi-sdk by default
+# make install no longer present, do this manually
+cp -a build/install/opt/wasi-sdk /opt/wasi-sdk
 cd ..
 
 # Build the examples
@@ -131,6 +130,7 @@ examples like this:
 WASI_SDK=/custom/path/to/wasi-sdk make
 ```
 
+
 ## Dependencies
 
 * A compiler toolchain to compile `clang` and `wasi-libc` via `wasi-sdk`.
@@ -141,4 +141,10 @@ To provide all these dependencies on Debian 11, simply run:
 
 ```sh
 apt install build-essential binaryen wabt
+```
+
+On macOS with Homebrew:
+
+```sh
+brew install cmake ninja wasm-tools binaryen wabt
 ```
