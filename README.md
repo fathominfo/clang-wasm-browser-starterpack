@@ -112,6 +112,8 @@ make
 # make install no longer present, do this manually
 cp -a build/install/opt/wasi-sdk /opt/wasi-sdk
 cd ..
+# Once built, the folder for the wasi-sdk repo can be set aside: it's huge. 
+# I moved it to /opt/wasi-sdk-repo to get it out of the project directory.
 
 # Build the examples
 make clean
