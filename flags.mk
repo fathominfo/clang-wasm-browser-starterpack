@@ -7,7 +7,8 @@ LD=$(WASI_SDK)/bin/wasm-ld
 # Optional flags which can optimize the WebAssembly binaries in space (size) and time (speed).
 CFLAGS_OPTIMIZATION = \
 	-O3 \
-	-flto
+	-flto \
+	-fno-exceptions 
 
 CFLAGS= \
 	$(CFLAGS_OPTIMIZATION)
@@ -21,5 +22,5 @@ LDFLAGS_OPTIMIZATION = \
 LDFLAGS= \
   --no-entry \
   --export-dynamic \
-	--unresolved-symbols=import-functions \
+  --allow-undefined \
 	$(LDFLAGS_OPTIMIZATION)
